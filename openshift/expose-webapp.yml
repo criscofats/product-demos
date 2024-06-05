@@ -11,8 +11,8 @@
       apiVersion: v1
       kind: Service
       metadata:
-        name: webapp-service
-        namespace: openshift-cnv
+        name: webapp-service-{{ vm_name }}
+        namespace: "{{ vm_namespace }}"
       spec:
         selector:
           env: "{{ vm_application }}"
@@ -28,13 +28,13 @@
       kind: Route
       apiVersion: route.openshift.io/v1
       metadata:
-        name: webapp-route
-        namespace: openshift-cnv
+        name: webapp-route-{{ vm_name }}
+        namespace: "{{ vm_namespace }}"
         labels: {}
       spec:
         to:
           kind: Service
-          name: webapp-service
+          name: webapp-service-{{ vm_name }}
         tls:
           termination: edge
           insecureEdgeTerminationPolicy: Redirect
