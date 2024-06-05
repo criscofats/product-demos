@@ -34,7 +34,7 @@
       spec:
         to:
           kind: Service
-          name: webapp-service-{{ vm_name }}
+          name: "{{ service_name }}"
         tls:
           termination: edge
           insecureEdgeTerminationPolicy: Redirect
