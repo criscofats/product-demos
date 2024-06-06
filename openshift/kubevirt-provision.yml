@@ -14,7 +14,7 @@
             namespace: "{{ vm_namespace }}"
             labels:
               app: "{{ vm_name }}"
-              os.template.kubevirt.io/fedora36: 'true'
+              os.template.kubevirt.io/rhel9.0: 'true'
               vm.kubevirt.io/name: "{{ vm_name }}"
               env: "{{ vm_application }}"
           spec:
